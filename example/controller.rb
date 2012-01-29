@@ -3,6 +3,7 @@ module Example
 
 		get '/' do
 			@title = 'Example page'
+			@quote = Quote.random
 			erb :example
 		end
 
