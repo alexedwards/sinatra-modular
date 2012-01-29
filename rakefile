@@ -1,0 +1,22 @@
+namespace "app" do
+	task :new, [:appname] do |t, args|
+		rm_rf args.appname
+		mkdir args.appname
+		touch "#{args.appname}/controller.rb"
+		touch "#{args.appname}/model.rb"
+	
+		controller = "module #{args.appname.capitalize}"
+		controller << "\n\tclass Controller < Sinatra::Base"
+		controller << "\n"
+		controller << "\n\t\tget '/' do"
+		controller << "\n\t\t\t'This is the default route for the #{args.appname.capitalize} app'"
+		controller << "\n\t\tend"
+		controller << "\n"
+		controller << "\n\tend"
+		controller << "\nend"
+	
+		File.open("#{args.appname}/controller.rb", 'r+') {|f| f.write(controller) }
+		puts "Application created!"
+		sh "ls"
+	end
+end

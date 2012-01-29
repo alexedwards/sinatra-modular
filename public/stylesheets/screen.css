@@ -1,0 +1,9 @@
+body {
+  margin: 0 auto;
+  width: 625px;
+  color: #515151; }
+
+a, a:visited {
+  color: #00b4ff; }
+  a:hover, a:visited:hover {
+    color: #006c99; }
