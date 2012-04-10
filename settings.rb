@@ -3,7 +3,8 @@ class Sinatra::Base
 	# This is where your application-wide settings go.
 	
 	configure do
-		set :views, './views'
+    set :views, './views'
+  	set :public_folder, './public'
 	end
 	
 	configure :development do
