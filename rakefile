@@ -4,7 +4,7 @@ namespace "app" do
 		mkdir args.appname
 		touch "#{args.appname}/controller.rb"
 		touch "#{args.appname}/model.rb"
-	
+
 		controller = "module #{args.appname.capitalize}"
 		controller << "\n\tclass Controller < Sinatra::Base"
 		controller << "\n"
@@ -14,7 +14,7 @@ namespace "app" do
 		controller << "\n"
 		controller << "\n\tend"
 		controller << "\nend"
-	
+
 		File.open("#{args.appname}/controller.rb", 'r+') {|f| f.write(controller) }
 		puts "Application created!"
 		sh "ls"

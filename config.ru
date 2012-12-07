@@ -1,5 +1,5 @@
 require 'bundler'
-Bundler.require(:default)
+Bundler.require(:default, ENV['RACK_ENV'])
 
 require './settings'
 Dir.glob('./*/controller.rb') {|f| require f}
